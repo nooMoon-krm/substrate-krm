@@ -37,6 +37,7 @@ crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 # third-party dependencies
+sc-cli = { version = "0.10.0-dev", path = "../../../client/cli" }
 array-bytes = "6.1"
 clap = { version = "4.2.5", features = ["derive"], optional = true }
 codec = { package = "parity-scale-codec", version = "3.6.1" }
@@ -102,7 +103,6 @@ node-primitives = { version = "2.0.0", path = "../primitives" }
 node-executor = { version = "3.0.0-dev", path = "../executor" }
 
 # CLI-specific dependencies
-sc-cli = { version = "0.10.0-dev", optional = true, path = "../../../client/cli" }
 frame-benchmarking-cli = { version = "4.0.0-dev", optional = true, path = "../../../utils/frame/benchmarking-cli" }
 node-inspect = { version = "0.9.0-dev", optional = true, path = "../inspect" }
 try-runtime-cli = { version = "0.10.0-dev", optional = true, path = "../../../utils/frame/try-runtime/cli" }

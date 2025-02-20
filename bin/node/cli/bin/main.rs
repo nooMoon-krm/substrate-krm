@@ -18,8 +18,11 @@
 
 //! Substrate Node CLI
 
-#![warn(missing_docs)]
+#[cfg(feature = "cli")]
+use node_cli::run;
 
-fn main() -> sc_cli::Result<()> {
-	node_cli::run()
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    #[cfg(feature = "cli")]
+    run();
+    Ok(())
 }

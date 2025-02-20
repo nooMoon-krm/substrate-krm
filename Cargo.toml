@@ -8,9 +8,28 @@ authors = ["Parity Technologies <admin@parity.io>"]
 edition = "2021"
 version = "0.0.0"
 
+[patch."https://github.com/w3f/fflonk"]
+w3f-pcs = { path = "./fflonk" }
+
+[patch."https://github.com/w3f/ring-vrf"]
+bandersnatch_vrfs = { path = "./ring-vrf/bandersnatch_vrfs" }
+
+[patch."https://github.com/w3f/ring-proof"]
+ring-proof = { path = "./ring-proof" }
+
 # This list of dependencies is for documentation purposes only.
 [dependencies]
 aquamarine = "0.3.2"
+ark-ec = "0.5"
+ring-vrf = { path = "ring-vrf" }
+ring-proof = { path = "ring-proof" }
+w3f-pcs = { path = "fflonk" }
+
+[patch.crates-io]
+ark-ec = { git = "https://github.com/arkworks-rs/algebra", tag = "v0.5.0" }
+ark-ff = { git = "https://github.com/arkworks-rs/algebra", tag = "v0.5.0" }
+ark-poly = { git = "https://github.com/arkworks-rs/algebra", tag = "v0.5.0" }
+
 
 subkey = { path = "bin/utils/subkey" }
 chain-spec-builder = { path = "bin/utils/chain-spec-builder" }
@@ -313,7 +332,29 @@ members = [
 	"utils/prometheus",
 	"utils/wasm-builder",
 	"utils/binary-merkle-tree",
+    "pallets/chain_config",
+    "pallets/posts",
+    "pallets/*",
+    "ring-vrf/bandersnatch_vrfs",
+    "ring-proof",
+	"fflonk"
 ]
+
+[workspace.dependencies]
+rand_core = { version = "0.6", default-features = false }
+zeroize = { version = "1.0", default-features = false, features = ["zeroize_derive"] }
+ark-std = { version = "0.5", default-features = false }
+ark-ff = { version = "0.5", default-features = false }
+ark-ec = { version = "0.5", default-features = false }
+ark-poly = { version = "0.5", default-features = false }
+ark-serialize = { version = "0.5", default-features = false, features = ["derive"] }
+ark-scale = { version = "0.0.12", default-features = false, features = ["ec"] }
+digest = { version = "0.10", default-features = false }
+getrandom_or_panic = { version = "0.0.3", default-features = false }
+ark-secret-scalar = { version = "0.5", default-features = false }
+w3f-pcs = { version = "0.0.1", default-features = false }
+rayon = { version = "1", default-features = false }
+
 
 # The list of dependencies below (which can be both direct and indirect dependencies) are crates
 # that are suspected to be CPU-intensive, and that are unlikely to require debugging (as some of

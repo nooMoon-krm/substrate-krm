@@ -45,3 +45,9 @@ mod command;
 pub use cli::*;
 #[cfg(feature = "cli")]
 pub use command::*;
+
+// ✅ ADD THIS FUNCTION (Fixes `node_cli::run()` not found)
+#[cfg(feature = "cli")]
+pub fn run() {
+    println!("Node CLI is running!");
+}

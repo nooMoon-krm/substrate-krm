@@ -1,0 +1,1564 @@
+   Compiling zstd-sys v2.0.13+zstd.1.5.6
+   Compiling zstd-safe v5.0.2+zstd.1.5.2
+   Compiling cranelift-frontend v0.95.1
+   Compiling cranelift-native v0.95.1
+   Compiling fflonk v0.1.1 (https://github.com/w3f/fflonk#eda051ea)
+warning: use of deprecated type alias `std::panic::PanicInfo`: use `PanicHookInfo` instead
+  --> primitives/panic-handler/src/lib.rs:33:16
+   |
+33 |     panic::{self, PanicInfo},
+   |                   ^^^^^^^^^
+   |
+   = note: `#[warn(deprecated)]` on by default
+
+warning: use of deprecated type alias `std::panic::PanicInfo`: use `PanicHookInfo` instead
+   --> primitives/panic-handler/src/lib.rs:148:22
+    |
+148 | fn panic_hook(info: &PanicInfo, report_url: &str, version: &str) {
+    |                      ^^^^^^^^^
+
+warning: `sp-panic-handler` (lib) generated 2 warnings
+   Compiling zstd-safe v6.0.6
+   Compiling substrate-prometheus-endpoint v0.10.0-dev (/home/joe/substrate/utils/prometheus)
+   Compiling jsonrpsee-core v0.16.3
+warning: unexpected `cfg` condition value: `try-runtime`
+   --> frame/support/procedural/src/lib.rs:432:31
+    |
+432 |     if cfg!(any(feature = "std", feature = "try-runtime")) {
+    |                                  ^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: expected values for `feature` are: `default`, `no-metadata-docs`, `std`, `tuples-128`, and `tuples-96`
+    = help: consider adding `try-runtime` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+    = note: `#[warn(unexpected_cfgs)]` on by default
+
+warning: fields `name` and `where_section` are never read
+  --> frame/support/procedural/src/construct_runtime/parse.rs:67:6
+   |
+66 | pub struct ImplicitRuntimeDeclaration {
+   |            -------------------------- fields in this struct
+67 |     pub name: Ident,
+   |         ^^^^
+68 |     pub where_section: Option<WhereSection>,
+   |         ^^^^^^^^^^^^^
+   |
+   = note: `ImplicitRuntimeDeclaration` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+   = note: `#[warn(dead_code)]` on by default
+
+warning: fields `block`, `node_block`, and `unchecked_extrinsic` are never read
+   --> frame/support/procedural/src/construct_runtime/parse.rs:126:6
+    |
+124 | pub struct WhereSection {
+    |            ------------ fields in this struct
+125 |     pub span: Span,
+126 |     pub block: syn::TypePath,
+    |         ^^^^^
+127 |     pub node_block: syn::TypePath,
+    |         ^^^^^^^^^^
+128 |     pub unchecked_extrinsic: syn::TypePath,
+    |         ^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `WhereSection` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+
+warning: field `span` is never read
+   --> frame/support/procedural/src/pallet/parse/mod.rs:570:6
+    |
+568 | pub struct InheritedCallWeightAttr {
+    |            ----------------------- field in this struct
+569 |     pub typename: syn::Type,
+570 |     pub span: proc_macro2::Span,
+    |         ^^^^
+    |
+    = note: `InheritedCallWeightAttr` has a derived impl for the trait `Clone`, but this is intentionally ignored during dead code analysis
+
+warning: fields `index` and `attr_span` are never read
+  --> frame/support/procedural/src/pallet/parse/composite.rs:83:6
+   |
+81 | pub struct CompositeDef {
+   |            ------------ fields in this struct
+82 |     /// The index of the HoldReason item in the pallet module.
+83 |     pub index: usize,
+   |         ^^^^^
+...
+87 |     pub attr_span: proc_macro2::Span,
+   |         ^^^^^^^^^
+
+warning: field `attr_span` is never read
+  --> frame/support/procedural/src/pallet/parse/config.rs:66:6
+   |
+51 | pub struct ConfigDef {
+   |            --------- field in this struct
+...
+66 |     pub attr_span: proc_macro2::Span,
+   |         ^^^^^^^^^
+
+warning: field `index` is never read
+  --> frame/support/procedural/src/pallet/parse/extra_constants.rs:41:6
+   |
+35 | pub struct ExtraConstantsDef {
+   |            ----------------- field in this struct
+...
+41 |     pub index: usize,
+   |         ^^^^^
+
+warning: field `index` is never read
+  --> frame/support/procedural/src/pallet/parse/genesis_build.rs:24:6
+   |
+22 | pub struct GenesisBuildDef {
+   |            --------------- field in this struct
+23 |     /// The index of item in pallet module.
+24 |     pub index: usize,
+   |         ^^^^^
+
+warning: field `index` is never read
+  --> frame/support/procedural/src/pallet/parse/hooks.rs:24:6
+   |
+22 | pub struct HooksDef {
+   |            -------- field in this struct
+23 |     /// The index of item in pallet.
+24 |     pub index: usize,
+   |         ^^^^^
+
+warning: field `index` is never read
+  --> frame/support/procedural/src/pallet/parse/inherent.rs:24:6
+   |
+22 | pub struct InherentDef {
+   |            ----------- field in this struct
+23 |     /// The index of inherent item in pallet module.
+24 |     pub index: usize,
+   |         ^^^^^
+
+warning: fields `index` and `has_instance` are never read
+  --> frame/support/procedural/src/pallet/parse/origin.rs:29:6
+   |
+27 | pub struct OriginDef {
+   |            --------- fields in this struct
+28 |     /// The index of item in pallet module.
+29 |     pub index: usize,
+   |         ^^^^^
+30 |     pub has_instance: bool,
+   |         ^^^^^^^^^^^^
+
+warning: fields `block` and `instances` are never read
+  --> frame/support/procedural/src/pallet/parse/type_value.rs:32:6
+   |
+22 | pub struct TypeValueDef {
+   |            ------------ fields in this struct
+...
+32 |     pub block: Box<syn::Block>,
+   |         ^^^^^
+...
+36 |     pub instances: Vec<helper::InstanceUsage>,
+   |         ^^^^^^^^^
+
+warning: fields `index` and `instances` are never read
+  --> frame/support/procedural/src/pallet/parse/validate_unsigned.rs:24:6
+   |
+22 | pub struct ValidateUnsignedDef {
+   |            ------------------- fields in this struct
+23 |     /// The index of validate unsigned item in pallet module.
+24 |     pub index: usize,
+   |         ^^^^^
+25 |     /// A set of usage of instance, must be check for consistency with config.
+26 |     pub instances: Vec<helper::InstanceUsage>,
+   |         ^^^^^^^^^
+
+   Compiling tikv-jemalloc-sys v0.5.4+5.3.0-patched
+warning: `frame-support-procedural` (lib) generated 13 warnings
+   Compiling parity-db v0.4.13
+   Compiling librocksdb-sys v0.11.0+8.1.1
+   Compiling wasm-opt-cxx-sys v0.114.2
+   Compiling wasm-opt-sys v0.114.2
+   Compiling nalgebra v0.33.2
+   Compiling tracing-futures v0.2.5
+   Compiling rustls-pemfile v1.0.4
+   Compiling rtoolbox v0.0.2
+   Compiling openssl-probe v0.1.6
+   Compiling ucd-trie v0.1.7
+   Compiling sc-consensus-slots v0.10.0-dev (/home/joe/substrate/client/consensus/slots)
+   Compiling fdlimit v0.2.1
+   Compiling frame-benchmarking-cli v4.0.0-dev (/home/joe/substrate/utils/frame/benchmarking-cli)
+   Compiling tokio-rustls v0.24.1
+   Compiling pest_derive v2.7.15
+   Compiling unicode-width v0.2.0
+   Compiling unicode-segmentation v1.12.0
+   Compiling substrate-build-script-utils v3.0.0 (/home/joe/substrate/utils/build-script-utils)
+   Compiling Inflector v0.11.4
+   Compiling wasmtime-cranelift-shared v8.0.1
+   Compiling clap v4.5.29
+   Compiling names v0.13.0
+   Compiling threadpool v1.8.1
+   Compiling gethostname v0.2.3
+   Compiling thousands v0.2.0
+   Compiling rustls-native-certs v0.6.3
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: ark_ff::PrimeField` is not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:126:18
+    |
+126 | impl<E: Pairing> PCS<E::ScalarField> for KZG<E> {
+    |                  ^^^^^^^^^^^^^^^^^^^ the trait `ark_ff::PrimeField` is not implemented for `<E as Pairing>::ScalarField`
+    |
+note: required by a bound in `pcs::PCS`
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/mod.rs:75:18
+    |
+75  | pub trait PCS<F: PrimeField> {
+    |                  ^^^^^^^^^^ required by this bound in `PCS`
+help: consider further restricting the associated type
+    |
+126 | impl<E: Pairing> PCS<E::ScalarField> for KZG<E> where <E as Pairing>::ScalarField: ark_ff::PrimeField {
+    |                                                 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::G1Affine: ark_serialize::CanonicalDeserialize` is not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:128:18
+    |
+128 |     type Proof = E::G1Affine;
+    |                  ^^^^^^^^^^^ the trait `ark_serialize::CanonicalDeserialize` is not implemented for `<E as Pairing>::G1Affine`
+    |
+note: required by a bound in `pcs::PCS::Proof`
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/mod.rs:78:46
+    |
+78  |     type Proof: Clone + CanonicalSerialize + CanonicalDeserialize;
+    |                                              ^^^^^^^^^^^^^^^^^^^^ required by this bound in `PCS::Proof`
+help: consider further restricting the associated type
+    |
+126 | impl<E: Pairing> PCS<E::ScalarField> for KZG<E> where <E as Pairing>::G1Affine: ark_serialize::CanonicalDeserialize {
+    |                                                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::G1Affine: ark_serialize::CanonicalSerialize` is not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:128:18
+    |
+128 |     type Proof = E::G1Affine;
+    |                  ^^^^^^^^^^^ the trait `ark_serialize::CanonicalSerialize` is not implemented for `<E as Pairing>::G1Affine`
+    |
+note: required by a bound in `pcs::PCS::Proof`
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/mod.rs:78:25
+    |
+78  |     type Proof: Clone + CanonicalSerialize + CanonicalDeserialize;
+    |                         ^^^^^^^^^^^^^^^^^^ required by this bound in `PCS::Proof`
+help: consider further restricting the associated type
+    |
+126 | impl<E: Pairing> PCS<E::ScalarField> for KZG<E> where <E as Pairing>::G1Affine: ark_serialize::CanonicalSerialize {
+    |                                                 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: Field` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:44:32
+   |
+44 |     fn z(x: E::ScalarField) -> Poly<E::ScalarField> {
+   |                                ^^^^^^^^^^^^^^^^^^^^ the trait `Field` is not implemented for `<E as Pairing>::ScalarField`
+   |
+note: required by a bound in `DensePolynomial`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/polynomial/univariate/dense.rs:22:31
+   |
+22 | pub struct DensePolynomial<F: Field> {
+   |                               ^^^^^ required by this bound in `DensePolynomial`
+help: consider further restricting the associated type
+   |
+44 |     fn z(x: E::ScalarField) -> Poly<E::ScalarField> where <E as Pairing>::ScalarField: Field {
+   |                                                     ++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: Field` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:48:14
+   |
+48 |     fn q(p: &Poly<E::ScalarField>, d: &Poly<E::ScalarField>) -> Poly<E::ScalarField> {
+   |              ^^^^^^^^^^^^^^^^^^^^ the trait `Field` is not implemented for `<E as Pairing>::ScalarField`
+   |
+note: required by a bound in `DensePolynomial`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/polynomial/univariate/dense.rs:22:31
+   |
+22 | pub struct DensePolynomial<F: Field> {
+   |                               ^^^^^ required by this bound in `DensePolynomial`
+help: consider further restricting the associated type
+   |
+48 |     fn q(p: &Poly<E::ScalarField>, d: &Poly<E::ScalarField>) -> Poly<E::ScalarField> where <E as Pairing>::ScalarField: Field {
+   |                                                                                      ++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: Field` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:52:29
+   |
+52 |     fn compute_quotient(p: &Poly<E::ScalarField>, x: E::ScalarField) -> Poly<E::ScalarField> {
+   |                             ^^^^^^^^^^^^^^^^^^^^ the trait `Field` is not implemented for `<E as Pairing>::ScalarField`
+   |
+note: required by a bound in `DensePolynomial`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/polynomial/univariate/dense.rs:22:31
+   |
+22 | pub struct DensePolynomial<F: Field> {
+   |                               ^^^^^ required by this bound in `DensePolynomial`
+help: consider further restricting the associated type
+   |
+52 |     fn compute_quotient(p: &Poly<E::ScalarField>, x: E::ScalarField) -> Poly<E::ScalarField> where <E as Pairing>::ScalarField: Field {
+   |                                                                                              ++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: Field` is not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:138:34
+    |
+138 |     fn commit(ck: &Self::CK, p: &Poly<E::ScalarField>) -> Self::C {
+    |                                  ^^^^^^^^^^^^^^^^^^^^ the trait `Field` is not implemented for `<E as Pairing>::ScalarField`
+    |
+note: required by a bound in `DensePolynomial`
+   --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/polynomial/univariate/dense.rs:22:31
+    |
+22  | pub struct DensePolynomial<F: Field> {
+    |                               ^^^^^ required by this bound in `DensePolynomial`
+help: consider further restricting the associated type
+    |
+138 |     fn commit(ck: &Self::CK, p: &Poly<E::ScalarField>) -> Self::C where <E as Pairing>::ScalarField: Field {
+    |                                                                   ++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: FftField` is not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:149:44
+    |
+149 |     fn commit_evals(ck: &Self::CK, evals: &Evaluations<E::ScalarField>) -> Self::C {
+    |                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<E as Pairing>::ScalarField`
+    |
+note: required by a bound in `Evaluations`
+   --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/evaluations/univariate/mod.rs:18:27
+    |
+18  | pub struct Evaluations<F: FftField, D: EvaluationDomain<F> = GeneralEvaluationDomain<F>> {
+    |                           ^^^^^^^^ required by this bound in `Evaluations`
+help: consider further restricting the associated type
+    |
+149 |     fn commit_evals(ck: &Self::CK, evals: &Evaluations<E::ScalarField>) -> Self::C where <E as Pairing>::ScalarField: FftField {
+    |                                                                                    +++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: Field` is not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:164:32
+    |
+164 |     fn open(ck: &Self::CK, p: &Poly<E::ScalarField>, x: E::ScalarField) -> Self::Proof {
+    |                                ^^^^^^^^^^^^^^^^^^^^ the trait `Field` is not implemented for `<E as Pairing>::ScalarField`
+    |
+note: required by a bound in `DensePolynomial`
+   --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/polynomial/univariate/dense.rs:22:31
+    |
+22  | pub struct DensePolynomial<F: Field> {
+    |                               ^^^^^ required by this bound in `DensePolynomial`
+help: consider further restricting the associated type
+    |
+164 |     fn open(ck: &Self::CK, p: &Poly<E::ScalarField>, x: E::ScalarField) -> Self::Proof where <E as Pairing>::ScalarField: Field {
+    |                                                                                        ++++++++++++++++++++++++++++++++++++++++
+
+   Compiling rpassword v7.3.1
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: ark_ff::PrimeField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/commitment.rs:15:18
+   |
+15 | impl<E: Pairing> Commitment<E::ScalarField> for KzgCommitment<E> {
+   |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `ark_ff::PrimeField` is not implemented for `<E as Pairing>::ScalarField`
+   |
+note: required by a bound in `pcs::Commitment`
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/mod.rs:17:25
+   |
+17 | pub trait Commitment<F: PrimeField>:
+   |                         ^^^^^^^^^^ required by this bound in `Commitment`
+help: consider further restricting the associated type
+   |
+15 | impl<E: Pairing> Commitment<E::ScalarField> for KzgCommitment<E> where <E as Pairing>::ScalarField: ark_ff::PrimeField {
+   |                                                                  +++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/lagrange.rs:16:8
+   |
+16 |     D: EvaluationDomain<G::ScalarField> = GeneralEvaluationDomain<<G as AffineRepr>::ScalarField>,
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+   |
+note: required by a bound in `EvaluationDomain`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/mod.rs:30:31
+   |
+30 | pub trait EvaluationDomain<F: FftField>:
+   |                               ^^^^^^^^ required by this bound in `EvaluationDomain`
+help: consider introducing a `where` clause, but there might be an alternative better way to express this requirement
+   |
+17 | > where <G as AffineRepr>::ScalarField: FftField {
+   |   ++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/lagrange.rs:16:8
+   |
+16 |     D: EvaluationDomain<G::ScalarField> = GeneralEvaluationDomain<<G as AffineRepr>::ScalarField>,
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+   |
+note: required by a bound in `EvaluationDomain`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/mod.rs:30:31
+   |
+30 | pub trait EvaluationDomain<F: FftField>:
+   |                               ^^^^^^^^ required by this bound in `EvaluationDomain`
+help: consider further restricting the associated type
+   |
+17 | > where <G as AffineRepr>::ScalarField: FftField {
+   |   ++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/lagrange.rs:23:38
+   |
+23 | impl<G: AffineRepr> CommitterKey for LagrangianCK<G> {
+   |                                      ^^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+   |
+note: required by a bound in `GeneralEvaluationDomain`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/general.rs:49:37
+   |
+49 | pub enum GeneralEvaluationDomain<F: FftField> {
+   |                                     ^^^^^^^^ required by this bound in `GeneralEvaluationDomain`
+help: consider further restricting the associated type
+   |
+23 | impl<G: AffineRepr> CommitterKey for LagrangianCK<G> where <G as AffineRepr>::ScalarField: FftField {
+   |                                                      ++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/lagrange.rs:29:24
+   |
+29 | impl<G: AffineRepr, D: EvaluationDomain<G::ScalarField>> LagrangianCK<G, D> {
+   |                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+   |
+note: required by a bound in `EvaluationDomain`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/mod.rs:30:31
+   |
+30 | pub trait EvaluationDomain<F: FftField>:
+   |                               ^^^^^^^^ required by this bound in `EvaluationDomain`
+help: consider further restricting the associated type
+   |
+29 | impl<G: AffineRepr, D: EvaluationDomain<G::ScalarField>> LagrangianCK<G, D> where <G as AffineRepr>::ScalarField: FftField {
+   |                                                                             ++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/lagrange.rs:16:8
+   |
+16 |     D: EvaluationDomain<G::ScalarField> = GeneralEvaluationDomain<<G as AffineRepr>::ScalarField>,
+   |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+   |
+note: required by a bound in `EvaluationDomain`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/mod.rs:30:31
+   |
+30 | pub trait EvaluationDomain<F: FftField>:
+   |                               ^^^^^^^^ required by this bound in `EvaluationDomain`
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/lagrange.rs:24:20
+   |
+24 |     fn max_degree(&self) -> usize {
+   |                    ^^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+   |
+note: required by a bound in `GeneralEvaluationDomain`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/general.rs:49:37
+   |
+49 | pub enum GeneralEvaluationDomain<F: FftField> {
+   |                                     ^^^^^^^^ required by this bound in `GeneralEvaluationDomain`
+help: consider further restricting the associated type
+   |
+24 |     fn max_degree(&self) -> usize where <G as AffineRepr>::ScalarField: FftField {
+   |                                   ++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/lagrange.rs:29:24
+   |
+29 | impl<G: AffineRepr, D: EvaluationDomain<G::ScalarField>> LagrangianCK<G, D> {
+   |                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+   |
+note: required by a bound in `EvaluationDomain`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/mod.rs:30:31
+   |
+30 | pub trait EvaluationDomain<F: FftField>:
+   |                               ^^^^^^^^ required by this bound in `EvaluationDomain`
+help: consider further restricting the associated type
+   |
+30 |     pub fn generate<R: RngCore>(domain: D, rng: &mut R) -> Self where <G as AffineRepr>::ScalarField: FftField {
+   |                                                                 ++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/lagrange.rs:29:24
+   |
+29 | impl<G: AffineRepr, D: EvaluationDomain<G::ScalarField>> LagrangianCK<G, D> {
+   |                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+   |
+note: required by a bound in `EvaluationDomain`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/mod.rs:30:31
+   |
+30 | pub trait EvaluationDomain<F: FftField>:
+   |                               ^^^^^^^^ required by this bound in `EvaluationDomain`
+help: consider further restricting the associated type
+   |
+36 |     pub fn from_trapdoor(domain: D, tau: G::ScalarField, g: G::Group) -> Self where <G as AffineRepr>::ScalarField: FftField {
+   |                                                                               ++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/lagrange.rs:45:29
+   |
+45 |     pub fn to_lagrangian<D: EvaluationDomain<G::ScalarField>>(
+   |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+   |
+note: required by a bound in `EvaluationDomain`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/mod.rs:30:31
+   |
+30 | pub trait EvaluationDomain<F: FftField>:
+   |                               ^^^^^^^^ required by this bound in `EvaluationDomain`
+help: consider further restricting the associated type
+   |
+48 |     ) -> LagrangianCK<G, D> where <G as AffineRepr>::ScalarField: FftField {
+   |                             ++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:69:28
+   |
+69 |     pub lagrangian: Option<LagrangianCK<G>>,
+   |                            ^^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+   |
+note: required by a bound in `GeneralEvaluationDomain`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/general.rs:49:37
+   |
+49 | pub enum GeneralEvaluationDomain<F: FftField> {
+   |                                     ^^^^^^^^ required by this bound in `GeneralEvaluationDomain`
+help: consider introducing a `where` clause, but there might be an alternative better way to express this requirement
+   |
+67 | pub struct KzgCommitterKey<G: AffineRepr> where <G as AffineRepr>::ScalarField: FftField {
+   |                                           ++++++++++++++++++++++++++++++++++++++++++++++
+
+   Compiling pest v2.7.15
+   Compiling zstd v0.12.4
+error[E0277]: the trait bound `<E as Pairing>::G1Affine: ark_serialize::CanonicalSerialize` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/commitment.rs:12:39
+   |
+12 | #[derive(Clone, Debug, PartialEq, Eq, CanonicalSerialize, CanonicalDeserialize)]
+   |                                       ^^^^^^^^^^^^^^^^^^ the trait `ark_serialize::CanonicalSerialize` is not implemented for `<E as Pairing>::G1Affine`
+   |
+   = note: this error originates in the derive macro `CanonicalSerialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `<E as Pairing>::G1Affine: ark_serialize::CanonicalDeserialize` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/commitment.rs:12:59
+   |
+12 | #[derive(Clone, Debug, PartialEq, Eq, CanonicalSerialize, CanonicalDeserialize)]
+   |                                                           ^^^^^^^^^^^^^^^^^^^^ the trait `ark_serialize::CanonicalDeserialize` is not implemented for `<E as Pairing>::G1Affine`
+   |
+   = note: this error originates in the derive macro `CanonicalDeserialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `<E as Pairing>::G1Affine: Valid` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/commitment.rs:12:59
+   |
+12 | #[derive(Clone, Debug, PartialEq, Eq, CanonicalSerialize, CanonicalDeserialize)]
+   |                                                           ^^^^^^^^^^^^^^^^^^^^ the trait `Valid` is not implemented for `<E as Pairing>::G1Affine`
+   |
+   = note: this error originates in the derive macro `CanonicalDeserialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+   Compiling zstd v0.11.2+zstd.1.5.2
+error[E0277]: the trait bound `G: ark_serialize::CanonicalSerialize` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/lagrange.rs:13:24
+   |
+13 | #[derive(Clone, Debug, CanonicalSerialize, CanonicalDeserialize)]
+   |                        ^^^^^^^^^^^^^^^^^^ the trait `ark_serialize::CanonicalSerialize` is not implemented for `G`
+   |
+   = note: required for `Vec<G>` to implement `ark_serialize::CanonicalSerialize`
+   = note: this error originates in the derive macro `CanonicalSerialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider further restricting type parameter `G` with trait `CanonicalSerialize`
+   |
+15 |     G: AffineRepr + ark_serialize::CanonicalSerialize,
+   |                   +++++++++++++++++++++++++++++++++++
+
+   Compiling node-template v4.0.0-dev (/home/joe/substrate/bin/node-template/node)
+error[E0277]: the trait bound `G: ark_serialize::CanonicalDeserialize` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/lagrange.rs:13:44
+   |
+13 | #[derive(Clone, Debug, CanonicalSerialize, CanonicalDeserialize)]
+   |                                            ^^^^^^^^^^^^^^^^^^^^ the trait `ark_serialize::CanonicalDeserialize` is not implemented for `G`
+   |
+   = note: required for `Vec<G>` to implement `ark_serialize::CanonicalDeserialize`
+   = note: this error originates in the derive macro `CanonicalDeserialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider further restricting type parameter `G` with trait `CanonicalDeserialize`
+   |
+15 |     G: AffineRepr + ark_serialize::CanonicalDeserialize,
+   |                   +++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `G: Valid` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/lagrange.rs:13:44
+   |
+13 | #[derive(Clone, Debug, CanonicalSerialize, CanonicalDeserialize)]
+   |                                            ^^^^^^^^^^^^^^^^^^^^ the trait `Valid` is not implemented for `G`
+   |
+   = note: required for `Vec<G>` to implement `Valid`
+   = note: this error originates in the derive macro `CanonicalDeserialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider further restricting type parameter `G` with trait `Valid`
+   |
+15 |     G: AffineRepr + ark_serialize::Valid,
+   |                   ++++++++++++++++++++++
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/lagrange.rs:37:55
+    |
+37  |         assert!(!domain.evaluate_vanishing_polynomial(tau).is_zero()); // doesn't give a basis
+    |                         ----------------------------- ^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+    |                         |
+    |                         required by a bound introduced by this call
+    |
+note: required by a bound in `evaluate_vanishing_polynomial`
+   --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/mod.rs:30:31
+    |
+30  | pub trait EvaluationDomain<F: FftField>:
+    |                               ^^^^^^^^ required by this bound in `EvaluationDomain::evaluate_vanishing_polynomial`
+...
+231 |     fn evaluate_vanishing_polynomial(&self, tau: F) -> F {
+    |        ----------------------------- required by a bound in this associated function
+help: consider further restricting the associated type
+    |
+36  |     pub fn from_trapdoor(domain: D, tau: G::ScalarField, g: G::Group) -> Self where <G as AffineRepr>::ScalarField: FftField {
+    |                                                                               ++++++++++++++++++++++++++++++++++++++++++++++
+
+   Compiling sc-proposer-metrics v0.10.0-dev (/home/joe/substrate/client/proposer-metrics)
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/lagrange.rs:38:68
+    |
+38  |         let lis_at_tau = domain.evaluate_all_lagrange_coefficients(tau); // L_i(tau)
+    |                                 ---------------------------------- ^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+    |                                 |
+    |                                 required by a bound introduced by this call
+    |
+note: required by a bound in `evaluate_all_lagrange_coefficients`
+   --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/mod.rs:30:31
+    |
+30  | pub trait EvaluationDomain<F: FftField>:
+    |                               ^^^^^^^^ required by this bound in `EvaluationDomain::evaluate_all_lagrange_coefficients`
+...
+156 |     fn evaluate_all_lagrange_coefficients(&self, tau: F) -> Vec<F> {
+    |        ---------------------------------- required by a bound in this associated function
+help: consider further restricting the associated type
+    |
+36  |     pub fn from_trapdoor(domain: D, tau: G::ScalarField, g: G::Group) -> Self where <G as AffineRepr>::ScalarField: FftField {
+    |                                                                               ++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/lagrange.rs:49:44
+   |
+49 |         assert!(self.max_evals() >= domain.size());
+   |                                            ^^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+   |
+note: required by a bound in `ark_poly::EvaluationDomain::size`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/mod.rs:30:31
+   |
+30 | pub trait EvaluationDomain<F: FftField>:
+   |                               ^^^^^^^^ required by this bound in `EvaluationDomain::size`
+...
+63 |     fn size(&self) -> usize;
+   |        ---- required by a bound in this associated function
+help: consider further restricting the associated type
+   |
+48 |     ) -> LagrangianCK<G, D> where <G as AffineRepr>::ScalarField: FftField {
+   |                             ++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/lagrange.rs:53:26
+   |
+53 |             .take(domain.size())
+   |                          ^^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+   |
+note: required by a bound in `ark_poly::EvaluationDomain::size`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/mod.rs:30:31
+   |
+30 | pub trait EvaluationDomain<F: FftField>:
+   |                               ^^^^^^^^ required by this bound in `EvaluationDomain::size`
+...
+63 |     fn size(&self) -> usize;
+   |        ---- required by a bound in this associated function
+help: consider further restricting the associated type
+   |
+48 |     ) -> LagrangianCK<G, D> where <G as AffineRepr>::ScalarField: FftField {
+   |                             ++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/lagrange.rs:58:20
+    |
+58  |             domain.ifft_in_place(&mut monomial_bases);
+    |                    ^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+    |
+note: required by a bound in `ifft_in_place`
+   --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/mod.rs:30:31
+    |
+30  | pub trait EvaluationDomain<F: FftField>:
+    |                               ^^^^^^^^ required by this bound in `EvaluationDomain::ifft_in_place`
+...
+111 |     fn ifft_in_place<T: DomainCoeff<F>>(&self, evals: &mut Vec<T>);
+    |        ------------- required by a bound in this associated function
+help: consider further restricting the associated type
+    |
+48  |     ) -> LagrangianCK<G, D> where <G as AffineRepr>::ScalarField: FftField {
+    |                             ++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/lagrange.rs:58:34
+    |
+58  |             domain.ifft_in_place(&mut monomial_bases);
+    |                    ------------- ^^^^^^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+    |                    |
+    |                    required by a bound introduced by this call
+    |
+    = note: required for `<G as AffineRepr>::Group` to implement `DomainCoeff<<G as AffineRepr>::ScalarField>`
+note: required by a bound in `ifft_in_place`
+   --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/mod.rs:111:25
+    |
+111 |     fn ifft_in_place<T: DomainCoeff<F>>(&self, evals: &mut Vec<T>);
+    |                         ^^^^^^^^^^^^^^ required by this bound in `EvaluationDomain::ifft_in_place`
+help: consider further restricting the associated type
+    |
+48  |     ) -> LagrangianCK<G, D> where <G as AffineRepr>::ScalarField: FftField {
+    |                             ++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:22:25
+   |
+22 |             lagrangian: None,
+   |                         ^^^^ the trait `FftField` is not implemented for `<E as Pairing>::ScalarField`
+   |
+note: required by a bound in `GeneralEvaluationDomain`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/general.rs:49:37
+   |
+49 | pub enum GeneralEvaluationDomain<F: FftField> {
+   |                                     ^^^^^^^^ required by this bound in `GeneralEvaluationDomain`
+help: consider further restricting the associated type
+   |
+16 |     fn ck(&self) -> Self::CK where <E as Pairing>::ScalarField: FftField {
+   |                              +++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:38:54
+   |
+38 |         let lagrangian = Some(monomial.to_lagrangian(domain));
+   |                                        ------------- ^^^^^^ the trait `FftField` is not implemented for `<E as Pairing>::ScalarField`
+   |                                        |
+   |                                        required by a bound introduced by this call
+   |
+   = note: required for `GeneralEvaluationDomain<<E as Pairing>::ScalarField>` to implement `EvaluationDomain<<E as Pairing>::ScalarField>`
+note: required by a bound in `lagrange::<impl MonomialCK<G>>::to_lagrangian`
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/lagrange.rs:45:29
+   |
+45 |     pub fn to_lagrangian<D: EvaluationDomain<G::ScalarField>>(
+   |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `lagrange::<impl MonomialCK<G>>::to_lagrangian`
+help: consider further restricting the associated type
+   |
+26 |     fn ck_with_lagrangian(&self, domain_size: usize) -> Self::CK where <E as Pairing>::ScalarField: FftField {
+   |                                                                  +++++++++++++++++++++++++++++++++++++++++++
+
+   Compiling hyper-rustls v0.24.2
+error[E0277]: the trait bound `GeneralEvaluationDomain<_>: std::marker::Copy` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:29:20
+   |
+29 |             domain.size(),
+   |                    ^^^^ the trait `std::marker::Copy` is not implemented for `GeneralEvaluationDomain<_>`
+   |
+   = note: required for `GeneralEvaluationDomain<<E as Pairing>::ScalarField>` to implement `std::marker::Copy`
+note: required by a bound in `ark_poly::EvaluationDomain::size`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/mod.rs:31:5
+   |
+31 |     Copy + Clone + hash::Hash + Eq + PartialEq + fmt::Debug + CanonicalSerialize + CanonicalDeserialize
+   |     ^^^^ required by this bound in `EvaluationDomain::size`
+...
+63 |     fn size(&self) -> usize;
+   |        ---- required by a bound in this associated function
+help: consider borrowing here
+   |
+29 |             (&domain).size(),
+   |             ++      +
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:29:13
+   |
+29 |             domain.size(),
+   |             ^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<E as Pairing>::ScalarField`
+   |
+note: required by a bound in `GeneralEvaluationDomain`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/general.rs:49:37
+   |
+49 | pub enum GeneralEvaluationDomain<F: FftField> {
+   |                                     ^^^^^^^^ required by this bound in `GeneralEvaluationDomain`
+help: consider further restricting the associated type
+   |
+26 |     fn ck_with_lagrangian(&self, domain_size: usize) -> Self::CK where <E as Pairing>::ScalarField: FftField {
+   |                                                                  +++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:27:22
+   |
+27 |         let domain = GeneralEvaluationDomain::new(domain_size).unwrap();
+   |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<E as Pairing>::ScalarField`
+   |
+note: required by a bound in `GeneralEvaluationDomain`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/general.rs:49:37
+   |
+49 | pub enum GeneralEvaluationDomain<F: FftField> {
+   |                                     ^^^^^^^^ required by this bound in `GeneralEvaluationDomain`
+help: consider further restricting the associated type
+   |
+26 |     fn ck_with_lagrangian(&self, domain_size: usize) -> Self::CK where <E as Pairing>::ScalarField: FftField {
+   |                                                                  +++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:27:22
+   |
+27 |         let domain = GeneralEvaluationDomain::new(domain_size).unwrap();
+   |                      ^^^^^^^^^^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<E as Pairing>::ScalarField`
+   |
+   = note: required for `GeneralEvaluationDomain<<E as Pairing>::ScalarField>` to implement `EvaluationDomain<<E as Pairing>::ScalarField>`
+help: consider further restricting the associated type
+   |
+26 |     fn ck_with_lagrangian(&self, domain_size: usize) -> Self::CK where <E as Pairing>::ScalarField: FftField {
+   |                                                                  +++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:38:26
+   |
+38 |         let lagrangian = Some(monomial.to_lagrangian(domain));
+   |                          ^^^^ the trait `FftField` is not implemented for `<E as Pairing>::ScalarField`
+   |
+note: required by a bound in `GeneralEvaluationDomain`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/general.rs:49:37
+   |
+49 | pub enum GeneralEvaluationDomain<F: FftField> {
+   |                                     ^^^^^^^^ required by this bound in `GeneralEvaluationDomain`
+help: consider further restricting the associated type
+   |
+26 |     fn ck_with_lagrangian(&self, domain_size: usize) -> Self::CK where <E as Pairing>::ScalarField: FftField {
+   |                                                                  +++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:38:26
+   |
+38 |         let lagrangian = Some(monomial.to_lagrangian(domain));
+   |                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<E as Pairing>::ScalarField`
+   |
+note: required by a bound in `GeneralEvaluationDomain`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/general.rs:49:37
+   |
+49 | pub enum GeneralEvaluationDomain<F: FftField> {
+   |                                     ^^^^^^^^ required by this bound in `GeneralEvaluationDomain`
+help: consider further restricting the associated type
+   |
+26 |     fn ck_with_lagrangian(&self, domain_size: usize) -> Self::CK where <E as Pairing>::ScalarField: FftField {
+   |                                                                  +++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:41:13
+   |
+41 |             lagrangian,
+   |             ^^^^^^^^^^ the trait `FftField` is not implemented for `<E as Pairing>::ScalarField`
+   |
+note: required by a bound in `GeneralEvaluationDomain`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/general.rs:49:37
+   |
+49 | pub enum GeneralEvaluationDomain<F: FftField> {
+   |                                     ^^^^^^^^ required by this bound in `GeneralEvaluationDomain`
+help: consider further restricting the associated type
+   |
+26 |     fn ck_with_lagrangian(&self, domain_size: usize) -> Self::CK where <E as Pairing>::ScalarField: FftField {
+   |                                                                  +++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:69:5
+   |
+66 | #[derive(Clone, Debug, CanonicalSerialize, CanonicalDeserialize)]
+   |          ----- in this derive macro expansion
+...
+69 |     pub lagrangian: Option<LagrangianCK<G>>,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+   |
+note: required by a bound in `GeneralEvaluationDomain`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/general.rs:49:37
+   |
+49 | pub enum GeneralEvaluationDomain<F: FftField> {
+   |                                     ^^^^^^^^ required by this bound in `GeneralEvaluationDomain`
+   = note: this error originates in the derive macro `Clone` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:69:5
+   |
+66 | #[derive(Clone, Debug, CanonicalSerialize, CanonicalDeserialize)]
+   |                 ----- in this derive macro expansion
+...
+69 |     pub lagrangian: Option<LagrangianCK<G>>,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+   |
+   = note: required for `GeneralEvaluationDomain<<G as AffineRepr>::ScalarField>` to implement `std::fmt::Debug`
+   = note: 3 redundant requirements hidden
+   = note: required for `&Option<LagrangianCK<G>>` to implement `std::fmt::Debug`
+   = note: required for the cast from `&&Option<LagrangianCK<G>>` to `&dyn std::fmt::Debug`
+   = note: this error originates in the derive macro `Debug` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:66:24
+   |
+66 | #[derive(Clone, Debug, CanonicalSerialize, CanonicalDeserialize)]
+   |                        ^^^^^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+   |
+note: required by a bound in `GeneralEvaluationDomain`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/general.rs:49:37
+   |
+49 | pub enum GeneralEvaluationDomain<F: FftField> {
+   |                                     ^^^^^^^^ required by this bound in `GeneralEvaluationDomain`
+   = note: this error originates in the derive macro `CanonicalSerialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:66:44
+   |
+66 | #[derive(Clone, Debug, CanonicalSerialize, CanonicalDeserialize)]
+   |                                            ^^^^^^^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+   |
+note: required by a bound in `GeneralEvaluationDomain`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/general.rs:49:37
+   |
+49 | pub enum GeneralEvaluationDomain<F: FftField> {
+   |                                     ^^^^^^^^ required by this bound in `GeneralEvaluationDomain`
+   = note: this error originates in the derive macro `CanonicalDeserialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `G: ark_serialize::CanonicalSerialize` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:73:24
+   |
+73 | #[derive(Clone, Debug, CanonicalSerialize, CanonicalDeserialize)]
+   |                        ^^^^^^^^^^^^^^^^^^ the trait `ark_serialize::CanonicalSerialize` is not implemented for `G`
+   |
+   = note: required for `Vec<G>` to implement `ark_serialize::CanonicalSerialize`
+   = note: this error originates in the derive macro `CanonicalSerialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider further restricting type parameter `G` with trait `CanonicalSerialize`
+   |
+74 | pub struct MonomialCK<G: AffineRepr + ark_serialize::CanonicalSerialize> {
+   |                                     +++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `G: ark_serialize::CanonicalDeserialize` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:73:44
+   |
+73 | #[derive(Clone, Debug, CanonicalSerialize, CanonicalDeserialize)]
+   |                                            ^^^^^^^^^^^^^^^^^^^^ the trait `ark_serialize::CanonicalDeserialize` is not implemented for `G`
+   |
+   = note: required for `Vec<G>` to implement `ark_serialize::CanonicalDeserialize`
+   = note: this error originates in the derive macro `CanonicalDeserialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider further restricting type parameter `G` with trait `CanonicalDeserialize`
+   |
+74 | pub struct MonomialCK<G: AffineRepr + ark_serialize::CanonicalDeserialize> {
+   |                                     +++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `G: Valid` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:73:44
+   |
+73 | #[derive(Clone, Debug, CanonicalSerialize, CanonicalDeserialize)]
+   |                                            ^^^^^^^^^^^^^^^^^^^^ the trait `Valid` is not implemented for `G`
+   |
+   = note: required for `Vec<G>` to implement `Valid`
+   = note: this error originates in the derive macro `CanonicalDeserialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider further restricting type parameter `G` with trait `Valid`
+   |
+74 | pub struct MonomialCK<G: AffineRepr + ark_serialize::Valid> {
+   |                                     ++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::G1Affine: ark_serialize::CanonicalSerialize` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:93:39
+   |
+93 | #[derive(Clone, Debug, Eq, PartialEq, CanonicalSerialize, CanonicalDeserialize)]
+   |                                       ^^^^^^^^^^^^^^^^^^ the trait `ark_serialize::CanonicalSerialize` is not implemented for `<E as Pairing>::G1Affine`
+   |
+   = note: this error originates in the derive macro `CanonicalSerialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `<E as Pairing>::G2Affine: ark_serialize::CanonicalSerialize` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:93:39
+   |
+93 | #[derive(Clone, Debug, Eq, PartialEq, CanonicalSerialize, CanonicalDeserialize)]
+   |                                       ^^^^^^^^^^^^^^^^^^ the trait `ark_serialize::CanonicalSerialize` is not implemented for `<E as Pairing>::G2Affine`
+   |
+   = note: this error originates in the derive macro `CanonicalSerialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `<E as Pairing>::G1Affine: ark_serialize::CanonicalDeserialize` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:93:59
+   |
+93 | #[derive(Clone, Debug, Eq, PartialEq, CanonicalSerialize, CanonicalDeserialize)]
+   |                                                           ^^^^^^^^^^^^^^^^^^^^ the trait `ark_serialize::CanonicalDeserialize` is not implemented for `<E as Pairing>::G1Affine`
+   |
+   = note: this error originates in the derive macro `CanonicalDeserialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `<E as Pairing>::G2Affine: ark_serialize::CanonicalDeserialize` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:93:59
+   |
+93 | #[derive(Clone, Debug, Eq, PartialEq, CanonicalSerialize, CanonicalDeserialize)]
+   |                                                           ^^^^^^^^^^^^^^^^^^^^ the trait `ark_serialize::CanonicalDeserialize` is not implemented for `<E as Pairing>::G2Affine`
+   |
+   = note: this error originates in the derive macro `CanonicalDeserialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `<E as Pairing>::G1Affine: Valid` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:93:59
+   |
+93 | #[derive(Clone, Debug, Eq, PartialEq, CanonicalSerialize, CanonicalDeserialize)]
+   |                                                           ^^^^^^^^^^^^^^^^^^^^ the trait `Valid` is not implemented for `<E as Pairing>::G1Affine`
+   |
+   = note: this error originates in the derive macro `CanonicalDeserialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `<E as Pairing>::G2Affine: Valid` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:93:59
+   |
+93 | #[derive(Clone, Debug, Eq, PartialEq, CanonicalSerialize, CanonicalDeserialize)]
+   |                                                           ^^^^^^^^^^^^^^^^^^^^ the trait `Valid` is not implemented for `<E as Pairing>::G2Affine`
+   |
+   = note: this error originates in the derive macro `CanonicalDeserialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: FftField` is not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/params.rs:140:25
+    |
+140 |             lagrangian: None,
+    |                         ^^^^ the trait `FftField` is not implemented for `<E as Pairing>::ScalarField`
+    |
+note: required by a bound in `GeneralEvaluationDomain`
+   --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/general.rs:49:37
+    |
+49  | pub enum GeneralEvaluationDomain<F: FftField> {
+    |                                     ^^^^^^^^ required by this bound in `GeneralEvaluationDomain`
+help: consider further restricting the associated type
+    |
+134 |     fn from(vk: KzgVerifierKey<E>) -> Self where <E as Pairing>::ScalarField: FftField {
+    |                                            +++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::G1Affine: ark_serialize::CanonicalSerialize` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/urs.rs:13:24
+   |
+13 | #[derive(Clone, Debug, CanonicalSerialize, CanonicalDeserialize)]
+   |                        ^^^^^^^^^^^^^^^^^^ the trait `ark_serialize::CanonicalSerialize` is not implemented for `<E as Pairing>::G1Affine`
+   |
+   = note: required for `Vec<<E as Pairing>::G1Affine>` to implement `ark_serialize::CanonicalSerialize`
+   = note: this error originates in the derive macro `CanonicalSerialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `<E as Pairing>::G2Affine: ark_serialize::CanonicalSerialize` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/urs.rs:13:24
+   |
+13 | #[derive(Clone, Debug, CanonicalSerialize, CanonicalDeserialize)]
+   |                        ^^^^^^^^^^^^^^^^^^ the trait `ark_serialize::CanonicalSerialize` is not implemented for `<E as Pairing>::G2Affine`
+   |
+   = note: required for `Vec<<E as Pairing>::G2Affine>` to implement `ark_serialize::CanonicalSerialize`
+   = note: this error originates in the derive macro `CanonicalSerialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `<E as Pairing>::G1Affine: ark_serialize::CanonicalDeserialize` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/urs.rs:13:44
+   |
+13 | #[derive(Clone, Debug, CanonicalSerialize, CanonicalDeserialize)]
+   |                                            ^^^^^^^^^^^^^^^^^^^^ the trait `ark_serialize::CanonicalDeserialize` is not implemented for `<E as Pairing>::G1Affine`
+   |
+   = note: required for `Vec<<E as Pairing>::G1Affine>` to implement `ark_serialize::CanonicalDeserialize`
+   = note: this error originates in the derive macro `CanonicalDeserialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `<E as Pairing>::G2Affine: ark_serialize::CanonicalDeserialize` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/urs.rs:13:44
+   |
+13 | #[derive(Clone, Debug, CanonicalSerialize, CanonicalDeserialize)]
+   |                                            ^^^^^^^^^^^^^^^^^^^^ the trait `ark_serialize::CanonicalDeserialize` is not implemented for `<E as Pairing>::G2Affine`
+   |
+   = note: required for `Vec<<E as Pairing>::G2Affine>` to implement `ark_serialize::CanonicalDeserialize`
+   = note: this error originates in the derive macro `CanonicalDeserialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `<E as Pairing>::G1Affine: Valid` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/urs.rs:13:44
+   |
+13 | #[derive(Clone, Debug, CanonicalSerialize, CanonicalDeserialize)]
+   |                                            ^^^^^^^^^^^^^^^^^^^^ the trait `Valid` is not implemented for `<E as Pairing>::G1Affine`
+   |
+   = note: required for `Vec<<E as Pairing>::G1Affine>` to implement `Valid`
+   = note: this error originates in the derive macro `CanonicalDeserialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0277]: the trait bound `<E as Pairing>::G2Affine: Valid` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/urs.rs:13:44
+   |
+13 | #[derive(Clone, Debug, CanonicalSerialize, CanonicalDeserialize)]
+   |                                            ^^^^^^^^^^^^^^^^^^^^ the trait `Valid` is not implemented for `<E as Pairing>::G2Affine`
+   |
+   = note: required for `Vec<<E as Pairing>::G2Affine>` to implement `Valid`
+   = note: this error originates in the derive macro `CanonicalDeserialize` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0599]: no associated item named `TWO_ADICITY` found for associated type `<E as Pairing>::ScalarField` in the current scope
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/urs.rs:47:49
+   |
+47 |             n as u64 <= 1u64 << E::ScalarField::TWO_ADICITY,
+   |                                                 ^^^^^^^^^^^ associated item not found in `<E as Pairing>::ScalarField`
+   |
+   = help: items from traits can only be used if the trait is in scope
+help: trait `FftField` which provides `TWO_ADICITY` is implemented but not in scope; perhaps you want to import it
+   |
+1  + use ark_ff::fields::fft_friendly::FftField;
+   |
+help: there is an associated constant `TWO_ADIC_ROOT_OF_UNITY` with a similar name
+   |
+47 -             n as u64 <= 1u64 << E::ScalarField::TWO_ADICITY,
+47 +             n as u64 <= 1u64 << E::ScalarField::TWO_ADIC_ROOT_OF_UNITY,
+   |
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: Field` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/urs.rs:53:64
+   |
+53 |         let powers_of_tau: Vec<E::ScalarField> = utils::powers(tau).take(n).collect();
+   |                                                  ------------- ^^^ the trait `Field` is not implemented for `<E as Pairing>::ScalarField`
+   |                                                  |
+   |                                                  required by a bound introduced by this call
+   |
+note: required by a bound in `utils::powers`
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/utils/mod.rs:7:18
+   |
+7  | pub fn powers<F: Field>(base: F) -> impl Iterator<Item = F> {
+   |                  ^^^^^ required by this bound in `powers`
+help: consider further restricting the associated type
+   |
+38 |     pub fn from_trapdoor(tau: E::ScalarField, n1: usize, n2: usize, g1: E::G1, g2: E::G2) -> Self where <E as Pairing>::ScalarField: Field {
+   |                                                                                                   ++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: Field` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/urs.rs:53:50
+   |
+53 |         let powers_of_tau: Vec<E::ScalarField> = utils::powers(tau).take(n).collect();
+   |                                                  ^^^^^^^^^^^^^^^^^^ the trait `Field` is not implemented for `<E as Pairing>::ScalarField`
+   |
+note: required by a bound in `utils::powers`
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/utils/mod.rs:7:18
+   |
+7  | pub fn powers<F: Field>(base: F) -> impl Iterator<Item = F> {
+   |                  ^^^^^ required by this bound in `powers`
+help: consider further restricting the associated type
+   |
+38 |     pub fn from_trapdoor(tau: E::ScalarField, n1: usize, n2: usize, g1: E::G1, g2: E::G2) -> Self where <E as Pairing>::ScalarField: Field {
+   |                                                                                                   ++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: Field` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/urs.rs:53:50
+   |
+53 |         let powers_of_tau: Vec<E::ScalarField> = utils::powers(tau).take(n).collect();
+   |                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `Field` is not implemented for `<E as Pairing>::ScalarField`
+   |
+note: required by a bound in `utils::powers`
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/utils/mod.rs:7:18
+   |
+7  | pub fn powers<F: Field>(base: F) -> impl Iterator<Item = F> {
+   |                  ^^^^^ required by this bound in `powers`
+help: consider further restricting the associated type
+   |
+38 |     pub fn from_trapdoor(tau: E::ScalarField, n1: usize, n2: usize, g1: E::G1, g2: E::G2) -> Self where <E as Pairing>::ScalarField: Field {
+   |                                                                                                   ++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: Field` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:45:39
+   |
+45 |         Poly::from_coefficients_slice(&[-x, E::ScalarField::one()])
+   |         ----------------------------- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `Field` is not implemented for `<E as Pairing>::ScalarField`
+   |         |
+   |         required by a bound introduced by this call
+   |
+note: required by a bound in `ark_poly::DenseUVPolynomial::from_coefficients_slice`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/polynomial/mod.rs:43:32
+   |
+43 | pub trait DenseUVPolynomial<F: Field>: Polynomial<F, Point = F> {
+   |                                ^^^^^ required by this bound in `DenseUVPolynomial::from_coefficients_slice`
+44 |     /// Constructs a new polynomial from a list of coefficients.
+45 |     fn from_coefficients_slice(coeffs: &[F]) -> Self;
+   |        ----------------------- required by a bound in this associated function
+help: consider further restricting the associated type
+   |
+44 |     fn z(x: E::ScalarField) -> Poly<E::ScalarField> where <E as Pairing>::ScalarField: Field {
+   |                                                     ++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: Field` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:45:9
+   |
+45 |         Poly::from_coefficients_slice(&[-x, E::ScalarField::one()])
+   |         ^^^^ the trait `Field` is not implemented for `<E as Pairing>::ScalarField`
+   |
+   = note: required for `DensePolynomial<<E as Pairing>::ScalarField>` to implement `DenseUVPolynomial<<E as Pairing>::ScalarField>`
+help: consider further restricting the associated type
+   |
+44 |     fn z(x: E::ScalarField) -> Poly<E::ScalarField> where <E as Pairing>::ScalarField: Field {
+   |                                                     ++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: Field` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:45:9
+   |
+45 |         Poly::from_coefficients_slice(&[-x, E::ScalarField::one()])
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `Field` is not implemented for `<E as Pairing>::ScalarField`
+   |
+note: required by a bound in `DensePolynomial`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/polynomial/univariate/dense.rs:22:31
+   |
+22 | pub struct DensePolynomial<F: Field> {
+   |                               ^^^^^ required by this bound in `DensePolynomial`
+help: consider further restricting the associated type
+   |
+44 |     fn z(x: E::ScalarField) -> Poly<E::ScalarField> where <E as Pairing>::ScalarField: Field {
+   |                                                     ++++++++++++++++++++++++++++++++++++++++
+
+error[E0369]: cannot divide `&DensePolynomial<<E as Pairing>::ScalarField>` by `&DensePolynomial<<E as Pairing>::ScalarField>`
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:49:11
+   |
+49 |         p / d
+   |         - ^ - &DensePolynomial<<E as Pairing>::ScalarField>
+   |         |
+   |         &DensePolynomial<<E as Pairing>::ScalarField>
+   |
+help: consider further restricting the associated type
+   |
+48 |     fn q(p: &Poly<E::ScalarField>, d: &Poly<E::ScalarField>) -> Poly<E::ScalarField> where <E as Pairing>::ScalarField: Field {
+   |                                                                                      ++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: Field` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:53:17
+   |
+53 |         Self::q(p, &Self::z(x))
+   |                 ^ the trait `Field` is not implemented for `<E as Pairing>::ScalarField`
+   |
+note: required by a bound in `DensePolynomial`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/polynomial/univariate/dense.rs:22:31
+   |
+22 | pub struct DensePolynomial<F: Field> {
+   |                               ^^^^^ required by this bound in `DensePolynomial`
+help: consider further restricting the associated type
+   |
+52 |     fn compute_quotient(p: &Poly<E::ScalarField>, x: E::ScalarField) -> Poly<E::ScalarField> where <E as Pairing>::ScalarField: Field {
+   |                                                                                              ++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: Field` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:53:21
+   |
+53 |         Self::q(p, &Self::z(x))
+   |                     ^^^^^^^^^^ the trait `Field` is not implemented for `<E as Pairing>::ScalarField`
+   |
+note: required by a bound in `DensePolynomial`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/polynomial/univariate/dense.rs:22:31
+   |
+22 | pub struct DensePolynomial<F: Field> {
+   |                               ^^^^^ required by this bound in `DensePolynomial`
+help: consider further restricting the associated type
+   |
+52 |     fn compute_quotient(p: &Poly<E::ScalarField>, x: E::ScalarField) -> Poly<E::ScalarField> where <E as Pairing>::ScalarField: Field {
+   |                                                                                              ++++++++++++++++++++++++++++++++++++++++
+
+   Compiling cranelift-wasm v0.95.1
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: Field` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:53:9
+   |
+53 |         Self::q(p, &Self::z(x))
+   |         ^^^^^^^^^^^^^^^^^^^^^^^ the trait `Field` is not implemented for `<E as Pairing>::ScalarField`
+   |
+note: required by a bound in `DensePolynomial`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/polynomial/univariate/dense.rs:22:31
+   |
+22 | pub struct DensePolynomial<F: Field> {
+   |                               ^^^^^ required by this bound in `DensePolynomial`
+help: consider further restricting the associated type
+   |
+52 |     fn compute_quotient(p: &Poly<E::ScalarField>, x: E::ScalarField) -> Poly<E::ScalarField> where <E as Pairing>::ScalarField: Field {
+   |                                                                                              ++++++++++++++++++++++++++++++++++++++++
+
+error[E0599]: the method `degree` exists for reference `&DensePolynomial<<E as Pairing>::ScalarField>`, but its trait bounds were not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:141:15
+    |
+141 |             p.degree() <= ck.max_degree(),
+    |               ^^^^^^
+    |
+   ::: /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/polynomial/univariate/dense.rs:22:1
+    |
+22  | pub struct DensePolynomial<F: Field> {
+    | ------------------------------------ doesn't satisfy `_: Polynomial<<E as Pairing>::ScalarField>`
+    |
+    = note: the following trait bounds were not satisfied:
+            `<E as Pairing>::ScalarField: Field`
+            which is required by `DensePolynomial<<E as Pairing>::ScalarField>: Polynomial<<E as Pairing>::ScalarField>`
+
+error[E0308]: mismatched types
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:141:27
+    |
+126 | impl<E: Pairing> PCS<E::ScalarField> for KZG<E> {
+    |      - expected this type parameter
+...
+141 |             p.degree() <= ck.max_degree(),
+    |                           ^^^^^^^^^^^^^^^ expected type parameter `E`, found `usize`
+    |
+    = note: expected type parameter `E`
+                         found type `usize`
+
+error[E0599]: the method `degree` exists for reference `&DensePolynomial<<E as Pairing>::ScalarField>`, but its trait bounds were not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:143:15
+    |
+143 |             p.degree(),
+    |               ^^^^^^
+    |
+   ::: /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/polynomial/univariate/dense.rs:22:1
+    |
+22  | pub struct DensePolynomial<F: Field> {
+    | ------------------------------------ doesn't satisfy `_: Polynomial<<E as Pairing>::ScalarField>`
+    |
+    = note: the following trait bounds were not satisfied:
+            `<E as Pairing>::ScalarField: Field`
+            which is required by `DensePolynomial<<E as Pairing>::ScalarField>: Polynomial<<E as Pairing>::ScalarField>`
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: FftField` is not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:150:18
+    |
+150 |           let ck = ck
+    |  __________________^
+151 | |             .lagrangian
+152 | |             .as_ref()
+    | |_____________________^ the trait `FftField` is not implemented for `<E as Pairing>::ScalarField`
+    |
+note: required by a bound in `GeneralEvaluationDomain`
+   --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/general.rs:49:37
+    |
+49  | pub enum GeneralEvaluationDomain<F: FftField> {
+    |                                     ^^^^^^^^ required by this bound in `GeneralEvaluationDomain`
+help: consider further restricting the associated type
+    |
+149 |     fn commit_evals(ck: &Self::CK, evals: &Evaluations<E::ScalarField>) -> Self::C where <E as Pairing>::ScalarField: FftField {
+    |                                                                                    +++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: FftField` is not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:150:18
+    |
+150 |           let ck = ck
+    |  __________________^
+151 | |             .lagrangian
+152 | |             .as_ref()
+153 | |             .expect("lagrangian key hadn't been generated");
+    | |___________________________________________________________^ the trait `FftField` is not implemented for `<E as Pairing>::ScalarField`
+    |
+note: required by a bound in `GeneralEvaluationDomain`
+   --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/general.rs:49:37
+    |
+49  | pub enum GeneralEvaluationDomain<F: FftField> {
+    |                                     ^^^^^^^^ required by this bound in `GeneralEvaluationDomain`
+help: consider further restricting the associated type
+    |
+149 |     fn commit_evals(ck: &Self::CK, evals: &Evaluations<E::ScalarField>) -> Self::C where <E as Pairing>::ScalarField: FftField {
+    |                                                                                    +++++++++++++++++++++++++++++++++++++++++++
+
+error[E0599]: the method `domain` exists for reference `&Evaluations<<E as Pairing>::ScalarField>`, but its trait bounds were not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:154:26
+    |
+154 |         assert_eq!(evals.domain(), ck.domain);
+    |                          ^^^^^^ private field, not a method
+    |
+    = note: the following trait bounds were not satisfied:
+            `<E as Pairing>::ScalarField: FftField`
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: FftField` is not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:156:34
+    |
+156 |             evals.evals.len() <= ck.max_evals(),
+    |                                  ^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<E as Pairing>::ScalarField`
+    |
+note: required by a bound in `GeneralEvaluationDomain`
+   --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/general.rs:49:37
+    |
+49  | pub enum GeneralEvaluationDomain<F: FftField> {
+    |                                     ^^^^^^^^ required by this bound in `GeneralEvaluationDomain`
+help: consider further restricting the associated type
+    |
+149 |     fn commit_evals(ck: &Self::CK, evals: &Evaluations<E::ScalarField>) -> Self::C where <E as Pairing>::ScalarField: FftField {
+    |                                                                                    +++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: FftField` is not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:159:13
+    |
+159 |             ck.max_evals()
+    |             ^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<E as Pairing>::ScalarField`
+    |
+note: required by a bound in `GeneralEvaluationDomain`
+   --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/domain/general.rs:49:37
+    |
+49  | pub enum GeneralEvaluationDomain<F: FftField> {
+    |                                     ^^^^^^^^ required by this bound in `GeneralEvaluationDomain`
+help: consider further restricting the associated type
+    |
+149 |     fn commit_evals(ck: &Self::CK, evals: &Evaluations<E::ScalarField>) -> Self::C where <E as Pairing>::ScalarField: FftField {
+    |                                                                                    +++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: Field` is not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:165:40
+    |
+165 |         let q = Self::compute_quotient(p, x);
+    |                                        ^ the trait `Field` is not implemented for `<E as Pairing>::ScalarField`
+    |
+note: required by a bound in `DensePolynomial`
+   --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/polynomial/univariate/dense.rs:22:31
+    |
+22  | pub struct DensePolynomial<F: Field> {
+    |                               ^^^^^ required by this bound in `DensePolynomial`
+help: consider further restricting the associated type
+    |
+164 |     fn open(ck: &Self::CK, p: &Poly<E::ScalarField>, x: E::ScalarField) -> Self::Proof where <E as Pairing>::ScalarField: Field {
+    |                                                                                        ++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: Field` is not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:165:17
+    |
+165 |         let q = Self::compute_quotient(p, x);
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `Field` is not implemented for `<E as Pairing>::ScalarField`
+    |
+note: required by a bound in `DensePolynomial`
+   --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-poly-0.5.0/src/polynomial/univariate/dense.rs:22:31
+    |
+22  | pub struct DensePolynomial<F: Field> {
+    |                               ^^^^^ required by this bound in `DensePolynomial`
+help: consider further restricting the associated type
+    |
+164 |     fn open(ck: &Self::CK, p: &Poly<E::ScalarField>, x: E::ScalarField) -> Self::Proof where <E as Pairing>::ScalarField: Field {
+    |                                                                                        ++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<E as Pairing>::ScalarField: ark_ff::PrimeField` is not satisfied
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/kzg/mod.rs:166:26
+    |
+166 |         Self::commit(ck, &q).0
+    |         ------------     ^^ the trait `ark_ff::PrimeField` is not implemented for `<E as Pairing>::ScalarField`
+    |         |
+    |         required by a bound introduced by this call
+    |
+note: required by a bound in `pcs::PCS::commit`
+   --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/pcs/mod.rs:75:18
+    |
+75  | pub trait PCS<F: PrimeField> {
+    |                  ^^^^^^^^^^ required by this bound in `PCS::commit`
+...
+89  |     fn commit(ck: &Self::CK, p: &Poly<F>) -> Self::C;
+    |        ------ required by a bound in this associated function
+help: consider further restricting the associated type
+    |
+164 |     fn open(ck: &Self::CK, p: &Poly<E::ScalarField>, x: E::ScalarField) -> Self::Proof where <E as Pairing>::ScalarField: ark_ff::PrimeField {
+    |                                                                                        +++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: ark_ff::PrimeField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/utils/ec.rs:17:25
+   |
+17 |     let bytes_in_repr = <G::ScalarField as PrimeField>::BigInt::NUM_LIMBS * 8;
+   |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `ark_ff::PrimeField` is not implemented for `<G as AffineRepr>::ScalarField`
+   |
+help: consider further restricting the associated type
+   |
+16 | pub fn small_multiexp_affine<G: AffineRepr>(coeffs: &[G::ScalarField], bases: &[G]) -> G::Group where <G as AffineRepr>::ScalarField: ark_ff::PrimeField {
+   |                                                                                                 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<G as AffineRepr>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/utils/ec.rs:17:26
+   |
+17 |     let bytes_in_repr = <G::ScalarField as PrimeField>::BigInt::NUM_LIMBS * 8;
+   |                          ^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<G as AffineRepr>::ScalarField`
+   |
+note: required by a bound in `ark_ff::PrimeField::BigInt`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-ff-0.5.0/src/fields/prime.rs:29:7
+   |
+29 |     + FftField
+   |       ^^^^^^^^ required by this bound in `PrimeField::BigInt`
+...
+37 |     type BigInt: BigInteger;
+   |          ------ required by a bound in this associated type
+help: consider further restricting the associated type
+   |
+16 | pub fn small_multiexp_affine<G: AffineRepr>(coeffs: &[G::ScalarField], bases: &[G]) -> G::Group where <G as AffineRepr>::ScalarField: FftField {
+   |                                                                                                 ++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0599]: no method named `into_bigint` found for reference `&<G as AffineRepr>::ScalarField` in the current scope
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/utils/ec.rs:20:20
+   |
+20 |         .map(|c| c.into_bigint().to_bytes_le())
+   |                    ^^^^^^^^^^^ method not found in `&<G as AffineRepr>::ScalarField`
+   |
+note: there are multiple different versions of crate `ark_ff` in the dependency graph
+  --> /home/joe/.cargo/git/checkouts/algebra-5142117e1244ae01/7ad88c4/ff/src/fields/prime.rs:27:1
+   |
+34 |       + Into<BigUint>
+   |                     ^ this is the trait that is needed
+...
+58 |       fn into_bigint(self) -> Self::BigInt;
+   |       ------------------------------------- the method is available for `&<G as AffineRepr>::ScalarField` here
+   |
+  ::: /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/utils/ec.rs:2:26
+   |
+2  |   use ark_ff::{BigInteger, PrimeField, Zero};
+   |                            ---------- `PrimeField` imported here doesn't correspond to the right version of crate `ark_ff`
+   |
+  ::: /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-ff-0.5.0/src/fields/prime.rs:27:1
+   |
+27 | / pub trait PrimeField:
+28 | |     Field<BasePrimeField = Self>
+29 | |     + FftField
+30 | |     + FromStr
+...  |
+33 | |     + From<BigUint>
+34 | |     + Into<BigUint>
+   | |___________________- this is the trait that was imported
+
+   Compiling sp-maybe-compressed-blob v4.1.0-dev (/home/joe/substrate/primitives/maybe-compressed-blob)
+error[E0308]: mismatched types
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/utils/ec.rs:33:47
+   |
+16 | pub fn small_multiexp_affine<G: AffineRepr>(coeffs: &[G::ScalarField], bases: &[G]) -> G::Group {
+   |                              - expected this type parameter
+...
+33 |                 if ((byte >> bit_idx) & 1) != 0 {
+   |                                               ^ expected type parameter `G`, found integer
+   |
+   = note: expected type parameter `G`
+                        found type `{integer}`
+
+error[E0277]: the trait bound `<G as PrimeGroup>::ScalarField: ark_ff::PrimeField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/utils/ec.rs:49:25
+   |
+49 |     let bytes_in_repr = <G::ScalarField as PrimeField>::BigInt::NUM_LIMBS * 8;
+   |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ the trait `ark_ff::PrimeField` is not implemented for `<G as PrimeGroup>::ScalarField`
+   |
+help: consider further restricting the associated type
+   |
+48 | pub fn _small_multiexp_proj_2<G: CurveGroup>(coeffs: &[G::ScalarField], bases: &[G]) -> G where <G as PrimeGroup>::ScalarField: ark_ff::PrimeField {
+   |                                                                                           ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0277]: the trait bound `<G as PrimeGroup>::ScalarField: FftField` is not satisfied
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/utils/ec.rs:49:26
+   |
+49 |     let bytes_in_repr = <G::ScalarField as PrimeField>::BigInt::NUM_LIMBS * 8;
+   |                          ^^^^^^^^^^^^^^ the trait `FftField` is not implemented for `<G as PrimeGroup>::ScalarField`
+   |
+note: required by a bound in `ark_ff::PrimeField::BigInt`
+  --> /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-ff-0.5.0/src/fields/prime.rs:29:7
+   |
+29 |     + FftField
+   |       ^^^^^^^^ required by this bound in `PrimeField::BigInt`
+...
+37 |     type BigInt: BigInteger;
+   |          ------ required by a bound in this associated type
+help: consider further restricting the associated type
+   |
+48 | pub fn _small_multiexp_proj_2<G: CurveGroup>(coeffs: &[G::ScalarField], bases: &[G]) -> G where <G as PrimeGroup>::ScalarField: FftField {
+   |                                                                                           ++++++++++++++++++++++++++++++++++++++++++++++
+
+error[E0599]: no method named `into_bigint` found for reference `&<G as PrimeGroup>::ScalarField` in the current scope
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/utils/ec.rs:52:20
+   |
+52 |         .map(|c| c.into_bigint().to_bytes_le())
+   |                    ^^^^^^^^^^^ method not found in `&<G as PrimeGroup>::ScalarField`
+   |
+note: there are multiple different versions of crate `ark_ff` in the dependency graph
+  --> /home/joe/.cargo/git/checkouts/algebra-5142117e1244ae01/7ad88c4/ff/src/fields/prime.rs:27:1
+   |
+34 |       + Into<BigUint>
+   |                     ^ this is the trait that is needed
+...
+58 |       fn into_bigint(self) -> Self::BigInt;
+   |       ------------------------------------- the method is available for `&<G as PrimeGroup>::ScalarField` here
+   |
+  ::: /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/utils/ec.rs:2:26
+   |
+2  |   use ark_ff::{BigInteger, PrimeField, Zero};
+   |                            ---------- `PrimeField` imported here doesn't correspond to the right version of crate `ark_ff`
+   |
+  ::: /home/joe/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ark-ff-0.5.0/src/fields/prime.rs:27:1
+   |
+27 | / pub trait PrimeField:
+28 | |     Field<BasePrimeField = Self>
+29 | |     + FftField
+30 | |     + FromStr
+...  |
+33 | |     + From<BigUint>
+34 | |     + Into<BigUint>
+   | |___________________- this is the trait that was imported
+
+   Compiling wasmtime-cache v8.0.1
+error[E0308]: mismatched types
+  --> /home/joe/.cargo/git/checkouts/fflonk-3bda211f084db985/eda051e/src/utils/ec.rs:65:47
+   |
+48 | pub fn _small_multiexp_proj_2<G: CurveGroup>(coeffs: &[G::ScalarField], bases: &[G]) -> G {
+   |                               - expected this type parameter
+...
+65 |                 if ((byte >> bit_idx) & 1) != 0 {
+   |                                               ^ expected type parameter `G`, found integer
+   |
+   = note: expected type parameter `G`
+                        found type `{integer}`
+
+   Compiling comfy-table v7.1.4
+Some errors have detailed explanations: E0277, E0308, E0369, E0599.
+For more information about an error, try `rustc --explain E0277`.
+error: could not compile `fflonk` (lib) due to 91 previous errors
+warning: build failed, waiting for other jobs to finish...

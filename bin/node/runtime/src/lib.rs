@@ -22,37 +22,79 @@
 // `construct_runtime!` does a lot of recursion and requires us to increase the limits.
 #![recursion_limit = "1024"]
 
+use frame_support::{
+    construct_runtime, parameter_types,
+    traits::{KeyOwnerProofSystem, Randomness, StorageInfo},
+    weights::{IdentityFee, Weight},
+};
+pub use pallet_balances;
+pub use pallet_timestamp;
+pub use pallet_chain_config;
+pub use pallet_posts;
+pub use pallet_treasury;
+pub use pallet_authorship;
+pub use pallet_indices;
+pub use pallet_grandpa;
+pub use pallet_babe;
+pub use pallet_staking;
+pub use pallet_chain_config;
+pub use pallet_posts;
+pub use pallet::*;
+
+
+construct_runtime!(
+    pub enum Runtime where
+        Block = Block,
+        NodeBlock = opaque::Block,
+        UncheckedExtrinsic = UncheckedExtrinsic
+    {
+        System: frame_system,
+        Timestamp: pallet_timestamp,
+        Balances: pallet_balances,
+        ChainConfig: pallet_chain_config,
+        Posts: pallet_posts,
+        Treasury: pallet_treasury,
+        Authorship: pallet_authorship,
+        Indices: pallet_indices,
+        Grandpa: pallet_grandpa,
+        Babe: pallet_babe,
+        Staking: pallet_staking,
+    }
+);
+
+// Import missing runtime-related items
+use frame_system::{
+    EnsureRoot, EnsureRootWithSuccess, EnsureSigned, EnsureSignedBy, EnsureWithSuccess,
+};
+
 use codec::{Decode, Encode, MaxEncodedLen};
 use frame_election_provider_support::{
-	bounds::{ElectionBounds, ElectionBoundsBuilder},
-	onchain, BalancingConfig, ElectionDataProvider, SequentialPhragmen, VoteWeight,
+    bounds::{ElectionBounds, ElectionBoundsBuilder},
+    onchain, BalancingConfig, ElectionDataProvider, SequentialPhragmen, VoteWeight,
 };
 use frame_support::{
-	construct_runtime,
-	dispatch::DispatchClass,
-	instances::{Instance1, Instance2},
-	ord_parameter_types,
-	pallet_prelude::Get,
-	parameter_types,
-	traits::{
-		fungible::{Balanced, Credit, ItemOf},
-		tokens::{nonfungibles_v2::Inspect, GetSalary, PayFromAccount},
-		AsEnsureOriginWithArg, ConstBool, ConstU128, ConstU16, ConstU32, Contains, Currency,
-		EitherOfDiverse, EqualPrivilegeOnly, Imbalance, InsideBoth, InstanceFilter,
-		KeyOwnerProofSystem, LockIdentifier, Nothing, OnUnbalanced, WithdrawReasons,
-	},
-	weights::{
-		constants::{
-			BlockExecutionWeight, ExtrinsicBaseWeight, RocksDbWeight, WEIGHT_REF_TIME_PER_SECOND,
-		},
-		ConstantMultiplier, IdentityFee, Weight,
-	},
-	BoundedVec, PalletId,
+    dispatch::DispatchClass,
+    instances::{Instance1, Instance2},
+    ord_parameter_types,
+    pallet_prelude::Get,
+    parameter_types,
+    traits::{
+        fungible::{Balanced, Credit, ItemOf},
+        tokens::{nonfungibles_v2::Inspect, GetSalary, PayFromAccount},
+        AsEnsureOriginWithArg, ConstBool, ConstU128, ConstU16, ConstU32, Contains, Currency,
+        EitherOfDiverse, EqualPrivilegeOnly, Imbalance, InsideBoth, InstanceFilter,
+        KeyOwnerProofSystem, LockIdentifier, Nothing, OnUnbalanced, WithdrawReasons,
+    },
+    weights::{
+        constants::{
+            BlockExecutionWeight, ExtrinsicBaseWeight, RocksDbWeight, WEIGHT_REF_TIME_PER_SECOND,
+        },
+        ConstantMultiplier, IdentityFee, Weight,
+    },
+    BoundedVec, PalletId,
 };
-use frame_system::{
-	limits::{BlockLength, BlockWeights},
-	EnsureRoot, EnsureRootWithSuccess, EnsureSigned, EnsureSignedBy, EnsureWithSuccess,
-};
+
+
 pub use node_primitives::{AccountId, Signature};
 use node_primitives::{AccountIndex, Balance, BlockNumber, Hash, Moment, Nonce};
 use pallet_asset_conversion::{NativeOrAssetId, NativeOrAssetIdConverter};
